@@ -1,5 +1,5 @@
 (function(){
-var roles=["géographe","spécialiste SIG","expert en collecte numérique","cartographe par drone"],i=0,j=0,del=false,el=document.getElementById("typed");
+var roles=["Géographe","Spécialiste SIG","Expert en collecte numérique","Cartographe","Drone mapping"],i=0,j=0,del=false,el=document.getElementById("typed");
 function tick(){el=document.getElementById("typed");if(!el)return setTimeout(tick,500);var w=roles[i];j+=del?-1:1;el.textContent=w.slice(0,j);
 var t=del?40:80;if(!del&&j===w.length){del=true;t=1400}else if(del&&j===0){del=false;i=(i+1)%roles.length;t=300}setTimeout(tick,t)}tick();
 document.querySelectorAll(".chip").forEach(function(c){c.addEventListener("click",function(){document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});c.classList.add("on");
